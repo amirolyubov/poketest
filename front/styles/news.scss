@@ -1,0 +1,52 @@
+@import "./variables.scss";
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade_fake {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.news {
+  position: relative;
+  user-select: none;
+  width: 100%;
+  padding: 70px 0;
+  background: $color_black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .fade {
+    animation: fade;
+    animation-duration: 0.5s;
+  }
+  .fade_fake {
+    animation: fade_fake;
+    animation-duration: 0.5s;
+  }
+
+  .one {
+    color: $color_white;
+    font-family: $font_text;
+
+    .title {
+      font-size: 23px;
+      font-weight: 700;
+    }
+    .body {
+      font-size: 20px;
+    }
+  }
+
+  .loader {
+    transition: 0.4s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background: $color_pink;
+  }
+}
