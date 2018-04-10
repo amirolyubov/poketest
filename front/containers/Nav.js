@@ -4,16 +4,22 @@ import { withRouter } from 'react-router'
 import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
 import actions from '../actions'
+import { Link } from 'react-router-dom'
 
-class Compare extends Component {
+class Nav extends Component {
   render () {
-    return <div>Compare</div>
+    return (
+      <div>
+        <Link to={'/'}>All</Link>
+        <Link to={'/graphics'}>Graphics</Link>
+      </div>
+    )
   }
 }
 
 const mapStateToProps = state => {
   return {
-    compare: state.compare
+    one: state.one
   }
 }
 const mapDispatchToProps = dispatch => {
@@ -22,4 +28,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Compare))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav))

@@ -5,15 +5,15 @@ import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
 import actions from '../actions'
 
-class All extends Component {
+class CompareContainer extends Component {
   render () {
-    return <div>All</div>
+    return <div>Compare</div>
   }
 }
 
 const mapStateToProps = state => {
   return {
-    all: state.all
+    compare: state.compare
   }
 }
 const mapDispatchToProps = dispatch => {
@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(All))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CompareContainer))

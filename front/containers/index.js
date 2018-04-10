@@ -1,6 +1,7 @@
-import All from './All'
-import One from './One'
-import Compare from './Compare'
-import Graphics from './Graphics'
+import AllContainer from './AllContainer'
+import OneContainer from './OneContainer'
+import CompareContainer from './CompareContainer'
+import GraphicsContainer from './GraphicsContainer'
+import Nav from './Nav'
 
-export { All, One, Compare, Graphics }
+export { AllContainer, OneContainer, CompareContainer, GraphicsContainer, Nav }

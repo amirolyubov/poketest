@@ -5,15 +5,17 @@ import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
 import actions from '../actions'
 
-class Graphics extends Component {
+import { All } from '../components'
+
+class AllContainer extends Component {
   render () {
-    return <div>Graphics</div>
+    return <All />
   }
 }
 
 const mapStateToProps = state => {
   return {
-    graphics: state.graphics
+    all: state.all
   }
 }
 const mapDispatchToProps = dispatch => {
@@ -22,4 +24,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Graphics))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AllContainer))
