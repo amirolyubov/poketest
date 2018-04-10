@@ -1,9 +1,11 @@
+import * as types from '../constants'
+
 const initialState = []
 
 const all = (state = initialState, action) => {
   switch (action.type) {
-    case 'test':
-      return state
+    case types.GET_ALL_SUCCESS:
+      return action.payload
     default:
       return state
   }

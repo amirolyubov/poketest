@@ -3,13 +3,18 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
-import actions from '../actions'
+import * as actions from '../actions'
 
 import { All } from '../components'
 
 class AllContainer extends Component {
+  componentDidMount () {
+    const { actions: { getAll } } = this.props
+    getAll()
+  }
   render () {
-    return <All />
+    console.log(this.props.all);
+    return <All pokemons={this.props.all}/>
   }
 }
 

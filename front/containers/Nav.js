@@ -17,15 +17,4 @@ class Nav extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    one: state.one
-  }
-}
-const mapDispatchToProps = dispatch => {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  }
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav))
+export default withRouter(Nav)
