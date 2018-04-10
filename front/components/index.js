@@ -1,2 +1,4 @@
 import All from './All'
-export { All }
+import One from './One'
+
+export { All, One }

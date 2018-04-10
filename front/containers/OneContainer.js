@@ -5,9 +5,11 @@ import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
 import actions from '../actions'
 
+import { One } from '../components'
+
 class OneContainer extends Component {
   render () {
-    return <div>One</div>
+    return <One />
   }
 }
 
