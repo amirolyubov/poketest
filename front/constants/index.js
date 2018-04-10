@@ -1,0 +1,3 @@
+export const GET_ALL_PROCESS = 'GET_ALL_PROCESS'
+export const GET_ALL_SUCCESS = 'GET_ALL_SUCCESS'
+export const GET_ALL_FAILURE = 'GET_ALL_FAILURE'
