@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Radar from 'react-d3-radar'
 
 import '../styles/one.scss'
@@ -29,12 +28,16 @@ class Chart extends Component {
 }
 
 class One extends Component {
+  handleCompareClick (name) {
+    const { pushHistory } = this.props
+    pushHistory(`/compare/${name}/unselected`)
+  }
   render () {
     const { pokemon } = this.props
     return (
       <div className='one_wrapper'>
         <div className='face'>
-          <h1>{pokemon.name} <button>compare</button></h1>
+          <h1>{pokemon.name} <button onClick={this.handleCompareClick.bind(this, pokemon.name)}>compare</button></h1>
           <img src={pokemon.avatar.front} />
           <h2>types</h2>
           <div className='labels types'>

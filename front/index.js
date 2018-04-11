@@ -26,7 +26,7 @@ ReactDOM.render(
       <div>
         <Route exact path='/' component={AllContainer} />
         <Route path='/pokemon/:pokemon' component={OneContainer} />
-        <Route path='/compare/:id' component={CompareContainer} />
+        <Route path='/compare/:firstId/:secondId' component={CompareContainer} />
         <Route path='/graphics' component={GraphicsContainer} />
       </div>
     </HashRouter>

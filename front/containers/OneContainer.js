@@ -14,7 +14,7 @@ class OneContainer extends Component {
   }
   render () {
     const { one, actions, loader } = this.props
-    return loader ? <Loader /> : <One pokemon={one} actions={actions}/>
+    return loader ? <Loader /> : <One pokemon={one} actions={actions} pushHistory={this.props.history.push} />
   }
 }
 

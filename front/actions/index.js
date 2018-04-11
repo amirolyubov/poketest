@@ -23,13 +23,13 @@ export const getAll = () => dispatch => {
   )
 }
 
-export const getOne = id => dispatch => {
+export const getOne = (id, comparing) => (dispatch, getState) => {
   dispatch(loadingOn())
   api.getOne(id).then(
     success => {
       dispatch(((data) => ({
-        type: types.GET_ONE_SUCCESS,
-        payload: preparePokemonData(data)
+        type: !comparing ? types.GET_ONE_SUCCESS : comparing === 'first' ? types.GET_FIRST_SUCCESS : types.GET_SECOND_SUCCESS,
+        payload: !comparing ? prepareForOne(data) : prepareForCompare(data, comparing, getState().compare.stats.data)
       }))(success))
       dispatch(loadingOff())
     },
@@ -41,7 +41,7 @@ export const getOne = id => dispatch => {
     },
   )
 }
-const preparePokemonData = pokemon => ({
+const prepareForOne = pokemon => ({
   name: pokemon.name,
   avatar: {
     front: pokemon.sprites.front_default,
@@ -52,3 +52,15 @@ const preparePokemonData = pokemon => ({
   abils: pokemon.abilities.map(item => item.ability.name),
   moves: pokemon.moves.map(item => item.move.name),
 })
+const prepareForCompare = (pokemon, comparing, compareData) => {
+  let data = compareData, obj = {}
+  pokemon.stats.map(item => obj[item.stat.name] = item.base_stat)
+  data[comparing === 'first' ? 0 : 1] = { key: pokemon.name, label: pokemon.name, values: obj }
+  return {
+    pokemon: prepareForOne(pokemon),
+    stats: {
+      variables: pokemon.stats.map(item => ({key: item.stat.name, label: item.stat.name})),
+      data: compareData
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "./_variables.scss";
+
+.compare_wrapper {
+  display: flex;
+  flex-direction: row;
+  .pane {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      text-transform: uppercase;
+    }
+    img {
+
+    }
+  }
+  .chart {
+    margin-top: 200px;
+  }
+}
