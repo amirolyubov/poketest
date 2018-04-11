@@ -1,0 +1,31 @@
+@import "./_variables.scss";
+
+.all_wrapper {
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+      width: 180px;
+      height: 180px;
+      margin: 10px;
+      padding: 10px;
+      background: $color_panel;
+      text-decoration: none !important;
+      color: $color_black;
+    }
+  }
+  .nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    input {
+      width: 40%;
+    }
+    button {
+
+    }
+  }
+}
