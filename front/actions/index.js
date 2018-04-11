@@ -19,10 +19,18 @@ export const getOne = id => dispatch => {
   api.getOne(id).then(
     success => dispatch(((data) => ({
       type: types.GET_ONE_SUCCESS,
-      payload: data
+      payload: preparePokemonData(data)
     }))(success)),
     error => dispatch((() => ({
       type: types.GET_ONE_FAILURE
     }))(error))
   )
 }
+const preparePokemonData = pokemon => ({
+  name: pokemon.name,
+  avatar: {
+    front: pokemon.sprites.front_default,
+    back: pokemon.sprites.back_default
+  },
+  stats: pokemon.stats.map(item => ({name: item.stat.name, value: item.base_stat}))
+})

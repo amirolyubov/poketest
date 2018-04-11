@@ -1,6 +1,12 @@
 import * as types from '../constants'
 
-const initialState = {}
+const initialState = {
+  name: '',
+  avatar: {
+    front: '',
+    back: ''
+  },
+}
 
 const all = (state = initialState, action) => {
   switch (action.type) {
