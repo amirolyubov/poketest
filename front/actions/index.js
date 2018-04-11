@@ -32,5 +32,6 @@ const preparePokemonData = pokemon => ({
     front: pokemon.sprites.front_default,
     back: pokemon.sprites.back_default
   },
-  stats: pokemon.stats.map(item => ({name: item.stat.name, value: item.base_stat}))
+  stats: pokemon.stats.map(item => ({name: item.stat.name, value: item.base_stat})),
+  types: pokemon.types.map(item => item.type.name)
 })
