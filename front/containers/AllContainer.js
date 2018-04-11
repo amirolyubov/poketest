@@ -5,7 +5,7 @@ import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 
-import { All } from '../components'
+import { All, Loader } from '../components'
 
 class AllContainer extends Component {
   componentDidMount () {
@@ -13,13 +13,15 @@ class AllContainer extends Component {
     getAll()
   }
   render () {
-    return <All pokemons={this.props.all}/>
+    const { loader, all } = this.props
+    return loader ? <Loader /> : <All pokemons={all}/>
   }
 }
 
 const mapStateToProps = state => {
   return {
-    all: state.all
+    all: state.all,
+    loader: state.loader
   }
 }
 const mapDispatchToProps = dispatch => {

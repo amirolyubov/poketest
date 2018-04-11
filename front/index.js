@@ -9,7 +9,7 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 import { Route } from 'react-router'
 
 import reducers from './reducers'
-import { AllContainer, OneContainer, CompareContainer, GraphicsContainer, Nav } from './containers/'
+import { AllContainer, OneContainer, CompareContainer, GraphicsContainer } from './containers/'
 
 const history = createHistory()
 const routerMW = routerMiddleware(history)
@@ -24,7 +24,6 @@ ReactDOM.render(
   <ConnectedRouter history={history}>
     <HashRouter>
       <div>
-        <Nav />
         <Route exact path='/' component={AllContainer} />
         <Route path='/pokemon/:pokemon' component={OneContainer} />
         <Route path='/compare/:id' component={CompareContainer} />

@@ -5,7 +5,7 @@ import { dispatch } from 'redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 
-import { One } from '../components'
+import { One, Loader } from '../components'
 
 class OneContainer extends Component {
   componentDidMount () {
@@ -13,14 +13,15 @@ class OneContainer extends Component {
     getOne(pokemon)
   }
   render () {
-    const { one, actions } = this.props
-    return <One pokemon={one} actions={actions}/>
+    const { one, actions, loader } = this.props
+    return loader ? <Loader /> : <One pokemon={one} actions={actions}/>
   }
 }
 
 const mapStateToProps = state => {
   return {
-    one: state.one
+    one: state.one,
+    loader: state.loader
   }
 }
 const mapDispatchToProps = dispatch => {

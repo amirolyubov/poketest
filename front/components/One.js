@@ -34,10 +34,19 @@ class One extends Component {
     return (
       <div className='one_wrapper'>
         <div className='face'>
-          <h1>{pokemon.name}</h1>
+          <h1>{pokemon.name} <button>compare</button></h1>
           <img src={pokemon.avatar.front} />
-          <div className='types'>
-            { pokemon.types && pokemon.types.map(type => <span>{type}</span>) }
+          <h2>types</h2>
+          <div className='labels types'>
+            { pokemon.types && pokemon.types.map((type, key) => <span key={key}>{ type }</span>) }
+          </div>
+          <h2>abilities</h2>
+          <div className='labels abils'>
+            { pokemon.abils && pokemon.abils.map((abil, key) => <span key={key}>{ abil }</span>) }
+          </div>
+          <h2>moves</h2>
+          <div className='labels moves'>
+            { pokemon.moves && pokemon.moves.map((move, key) => <span key={key}>{ move }</span>) }
           </div>
         </div>
         <div className='stats'>
