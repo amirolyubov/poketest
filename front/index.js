@@ -26,7 +26,7 @@ ReactDOM.render(
       <div>
         <Nav />
         <Route exact path='/' component={AllContainer} />
-        <Route path='/one/:id' component={OneContainer} />
+        <Route path='/pokemon/:pokemon' component={OneContainer} />
         <Route path='/compare/:id' component={CompareContainer} />
         <Route path='/graphics' component={GraphicsContainer} />
       </div>

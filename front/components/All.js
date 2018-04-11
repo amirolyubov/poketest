@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../styles/all.scss';
 
 const Item = ({pokemon}) => (
-  <Link className='item' to={`/one/${'vsve'}`}>
+  <Link className='item' to={`/pokemon/${pokemon.name}`}>
     <div>{pokemon.name}</div>
     <div>body</div>
   </Link>

@@ -13,7 +13,6 @@ class AllContainer extends Component {
     getAll()
   }
   render () {
-    console.log(this.props.all);
     return <All pokemons={this.props.all}/>
   }
 }

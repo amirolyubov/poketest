@@ -22,7 +22,7 @@ export const getOne = id => dispatch => {
       payload: data
     }))(success)),
     error => dispatch((() => ({
-      type: types.GET_ONE_SUCCESS
+      type: types.GET_ONE_FAILURE
     }))(error))
   )
 }

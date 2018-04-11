@@ -8,8 +8,13 @@ import * as actions from '../actions'
 import { One } from '../components'
 
 class OneContainer extends Component {
+  componentDidMount () {
+    const { actions: { getOne }, match: { params: { pokemon } } } = this.props
+    getOne(pokemon)
+  }
   render () {
-    return <One />
+    const { one, actions } = this.props
+    return <One pokemon={one} actions={actions}/>
   }
 }
 
